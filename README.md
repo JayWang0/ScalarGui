@@ -66,9 +66,9 @@ Configure custom paths for `git` and `scalar` executables if they're not on your
 ### Build from Source
 
 ```bash
-git clone <repository-url>
+git clone [<repository-url>](https://github.com/JayWang0/ScalarGui.git)
 cd ScalarGui
-dotnet build ScalarGui.slnx
+dotnet build ScalarGui.slnx or dotnet run -project .\ScalarGui.csproj
 ```
 
 ### Run
