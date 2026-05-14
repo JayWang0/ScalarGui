@@ -1,0 +1,82 @@
+﻿<Window x:Class="ScalarGui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:ScalarGui.ViewModels"
+        xmlns:views="clr-namespace:ScalarGui.Views"
+        xmlns:loc="clr-namespace:ScalarGui.Localization"
+        mc:Ignorable="d"
+        Title="{loc:Str AppTitle}" Height="720" Width="1100"
+        WindowStartupLocation="CenterScreen"
+        Icon="app.ico"
+        Loaded="Window_Loaded">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:SetupViewModel}">
+            <views:SetupView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CloneViewModel}">
+            <views:CloneView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SparseCheckoutViewModel}">
+            <views:SparseCheckoutView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+            <views:SettingsView/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Left Nav -->
+        <Border Grid.Column="0" Grid.RowSpan="2" Background="#F3F3F3" BorderBrush="#E0E0E0" BorderThickness="0,0,1,0">
+            <StackPanel Margin="0,8,0,0">
+                <TextBlock Text="{loc:Str AppName}" FontSize="16" FontWeight="Bold" Margin="12,4,0,16"
+                           Foreground="#0078D4"/>
+
+                <ListBox x:Name="NavList" SelectedIndex="{Binding SelectedNavIndex}"
+                         BorderThickness="0" Background="Transparent">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="ListBoxItem">
+                            <Setter Property="Padding" Value="12,8"/>
+                            <Setter Property="FontSize" Value="14"/>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <ListBoxItem Content="{loc:Str Nav_Setup}"/>
+                    <ListBoxItem Content="{loc:Str Nav_Clone}"/>
+                    <ListBoxItem Content="{loc:Str Nav_SparseCheckout}"/>
+                    <ListBoxItem Content="{loc:Str Nav_Settings}"/>
+                </ListBox>
+
+                <Separator Margin="8,8"/>
+
+                <Button Content="{loc:Str OpenExistingRepo}" Command="{Binding OpenExistingRepoCommand}"
+                        Margin="8,0" Padding="8,6" HorizontalAlignment="Stretch"/>
+
+                <TextBlock Text="{Binding CurrentRepoPath}" TextTrimming="CharacterEllipsis"
+                           Foreground="Gray" FontSize="11" Margin="12,8,8,0" TextWrapping="Wrap"
+                           MaxHeight="60"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Content Area -->
+        <ContentControl Grid.Column="1" Grid.Row="0" Content="{Binding CurrentView}"/>
+
+        <!-- Status Bar -->
+        <Border Grid.Column="1" Grid.Row="1" Background="#F8F8F8" BorderBrush="#E0E0E0" BorderThickness="0,1,0,0"
+                Padding="12,4">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding GitVersion}" FontSize="11" Foreground="Gray" Margin="0,0,16,0"/>
+                <TextBlock Text="{Binding ScalarVersion}" FontSize="11" Foreground="Gray"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

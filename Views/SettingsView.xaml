@@ -1,0 +1,126 @@
+<UserControl x:Class="ScalarGui.Views.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:ScalarGui.ViewModels"
+             xmlns:loc="clr-namespace:ScalarGui.Localization"
+             d:DataContext="{d:DesignInstance Type=vm:SettingsViewModel}"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="16">
+            <TextBlock Text="{loc:Str Settings_Title}" FontSize="20" FontWeight="SemiBold" Margin="0,0,0,12"/>
+
+            <!-- Language -->
+            <GroupBox Header="{loc:Str Settings_Language}" Margin="0,0,0,8">
+                <ComboBox SelectedIndex="{Binding SelectedLanguageIndex}" Width="200" Margin="4" HorizontalAlignment="Left">
+                    <ComboBoxItem Content="English"/>
+                    <ComboBoxItem Content="中文"/>
+                </ComboBox>
+            </GroupBox>
+
+            <!-- Paths -->
+            <GroupBox Header="{loc:Str Settings_ToolPaths}" Margin="0,0,0,8">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{loc:Str Settings_GitExe}" VerticalAlignment="Center" Margin="0,0,0,4"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding GitPath}" Margin="0,0,0,4" Padding="4"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{loc:Str Settings_ScalarExe}" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ScalarPath}" Padding="4"/>
+                </Grid>
+            </GroupBox>
+
+            <!-- Network Config -->
+            <GroupBox Header="{loc:Str Settings_NetworkConfig}" Margin="0,0,0,8">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{loc:Str Settings_HttpPostBuffer}" VerticalAlignment="Center" Margin="0,0,0,4"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding HttpPostBuffer}" Margin="0,0,0,4" Padding="4"/>
+                    <TextBlock Grid.Row="0" Grid.Column="2" Text="{loc:Str Settings_HttpPostBufferHint}" Foreground="Gray" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{loc:Str Settings_HttpLowSpeedLimit}" VerticalAlignment="Center" Margin="0,0,0,4"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding HttpLowSpeedLimit}" Margin="0,0,0,4" Padding="4"/>
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="{loc:Str Settings_HttpLowSpeedLimitHint}" Foreground="Gray" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="{loc:Str Settings_HttpLowSpeedTime}" VerticalAlignment="Center" Margin="0,0,0,4"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding HttpLowSpeedTime}" Margin="0,0,0,4" Padding="4"/>
+                    <TextBlock Grid.Row="2" Grid.Column="2" Text="{loc:Str Settings_HttpLowSpeedTimeHint}" Foreground="Gray" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="{loc:Str Settings_CoreCompression}" VerticalAlignment="Center" Margin="0,0,0,4"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CoreCompression}" Margin="0,0,0,4" Padding="4"/>
+                    <TextBlock Grid.Row="3" Grid.Column="2" Text="{loc:Str Settings_CoreCompressionHint}" Foreground="Gray" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="{loc:Str Settings_FetchNegotiation}" VerticalAlignment="Center" Margin="0,0,0,4"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding FetchNegotiationAlgorithm}" Margin="0,0,0,4" Padding="4"/>
+                    <TextBlock Grid.Row="4" Grid.Column="2" Text="{loc:Str Settings_FetchNegotiationHint}" Foreground="Gray" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="{loc:Str Settings_PackThreads}" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding PackThreads}" Padding="4"/>
+                    <TextBlock Grid.Row="5" Grid.Column="2" Text="{loc:Str Settings_PackThreadsHint}" Foreground="Gray" VerticalAlignment="Center"/>
+                </Grid>
+            </GroupBox>
+
+            <!-- Retry Config -->
+            <GroupBox Header="{loc:Str Settings_RetryStrategy}" Margin="0,0,0,8">
+                <Grid Margin="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{loc:Str Settings_MaxRetries}" VerticalAlignment="Center" Margin="0,0,0,4"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding MaxRetries}" Margin="0,0,0,4" Padding="4"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{loc:Str Settings_BaseRetryDelay}" VerticalAlignment="Center" Margin="0,0,0,4"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding BaseRetryDelaySeconds}" Margin="0,0,0,4" Padding="4"/>
+                    <TextBlock Grid.Row="1" Grid.Column="2" Text="{loc:Str Settings_BaseRetryDelayHint}" Foreground="Gray" VerticalAlignment="Center"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="{loc:Str Settings_MaxRetryDelay}" VerticalAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding MaxRetryDelaySeconds}" Padding="4"/>
+                </Grid>
+            </GroupBox>
+
+            <!-- Actions -->
+            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                <Button Content="{loc:Str Settings_Save}" Command="{Binding SaveSettingsCommand}"
+                        Padding="16,6" Margin="0,0,8,0"
+                        Background="#0078D4" Foreground="White" FontWeight="SemiBold"/>
+                <Button Content="{loc:Str Settings_ApplyGitConfig}" Command="{Binding ApplyGitConfigCommand}"
+                        Padding="16,6" Margin="0,0,8,0"/>
+                <Button Content="{loc:Str Settings_ResetDefaults}" Command="{Binding ResetDefaultsCommand}"
+                        Padding="16,6"/>
+            </StackPanel>
+
+            <TextBlock Text="{Binding StatusText}" Foreground="Green" Margin="0,8,0,0" FontWeight="SemiBold"/>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

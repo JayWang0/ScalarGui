@@ -1,0 +1,18 @@
+## Build results
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.DotSettings
+
+## Local configuration and secrets
+.env
+.env.*
+*.pfx
+*.snk
+*.pem
+*.key
+
+## Scalar GUI task state
+.scalargui/

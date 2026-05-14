@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- MainWindow -->
+  <data name="AppTitle" xml:space="preserve">
+    <value>ScalarGui — Large Repo Manager</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>ScalarGui</value>
+  </data>
+  <data name="Nav_Setup" xml:space="preserve">
+    <value>🔧 Setup</value>
+  </data>
+  <data name="Nav_Clone" xml:space="preserve">
+    <value>📥 Clone</value>
+  </data>
+  <data name="Nav_SparseCheckout" xml:space="preserve">
+    <value>📂 Sparse-Checkout</value>
+  </data>
+  <data name="Nav_Settings" xml:space="preserve">
+    <value>⚙ Settings</value>
+  </data>
+  <data name="OpenExistingRepo" xml:space="preserve">
+    <value>📁 Open Existing Repo</value>
+  </data>
+
+  <!-- SetupView -->
+  <data name="Setup_Title" xml:space="preserve">
+    <value>Prerequisites Check</value>
+  </data>
+  <data name="Setup_Subtitle" xml:space="preserve">
+    <value>Make sure Git and Scalar are installed before continuing.</value>
+  </data>
+  <data name="Setup_RequiredTools" xml:space="preserve">
+    <value>Required Tools</value>
+  </data>
+  <data name="Setup_Git" xml:space="preserve">
+    <value>Git</value>
+  </data>
+  <data name="Setup_GitDesc" xml:space="preserve">
+    <value>Required for repository operations and source control commands.</value>
+  </data>
+  <data name="Setup_Scalar" xml:space="preserve">
+    <value>Scalar</value>
+  </data>
+  <data name="Setup_ScalarDesc" xml:space="preserve">
+    <value>Needed for Scalar-specific enlistment and maintenance workflows.</value>
+  </data>
+  <data name="Setup_Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="Setup_Recheck" xml:space="preserve">
+    <value>🔄 Re-check</value>
+  </data>
+
+  <!-- CloneView -->
+  <data name="Clone_Title" xml:space="preserve">
+    <value>Scalar Clone</value>
+  </data>
+  <data name="Clone_RepoUrl" xml:space="preserve">
+    <value>Repository URL</value>
+  </data>
+  <data name="Clone_Paste" xml:space="preserve">
+    <value>📋 Paste</value>
+  </data>
+  <data name="Clone_TargetDir" xml:space="preserve">
+    <value>Target Directory</value>
+  </data>
+  <data name="Clone_Browse" xml:space="preserve">
+    <value>📁 Browse</value>
+  </data>
+  <data name="Clone_AlreadyExists" xml:space="preserve">
+    <value>⚠️ A repository already exists at this location.</value>
+  </data>
+  <data name="Clone_OpenExisting" xml:space="preserve">
+    <value>Open Existing Repo →</value>
+  </data>
+  <data name="Clone_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="Clone_Branch" xml:space="preserve">
+    <value>Branch:</value>
+  </data>
+  <data name="Clone_SingleBranch" xml:space="preserve">
+    <value>Single Branch</value>
+  </data>
+  <data name="Clone_NoTags" xml:space="preserve">
+    <value>No Tags</value>
+  </data>
+  <data name="Clone_FullClone" xml:space="preserve">
+    <value>Full Clone</value>
+  </data>
+  <data name="Clone_NoSrc" xml:space="preserve">
+    <value>No src/</value>
+  </data>
+  <data name="Clone_GvfsProtocol" xml:space="preserve">
+    <value>GVFS Protocol</value>
+  </data>
+  <data name="Clone_Start" xml:space="preserve">
+    <value>▶ Clone</value>
+  </data>
+  <data name="Clone_Cancel" xml:space="preserve">
+    <value>⏹ Cancel</value>
+  </data>
+  <data name="Clone_Output" xml:space="preserve">
+    <value>Output</value>
+  </data>
+
+  <!-- SparseCheckoutView -->
+  <data name="Sparse_Title" xml:space="preserve">
+    <value>Sparse-Checkout Manager</value>
+  </data>
+  <data name="Sparse_RepoDirs" xml:space="preserve">
+    <value>Repository Directories</value>
+  </data>
+  <data name="Sparse_Loading" xml:space="preserve">
+    <value>(loading...)</value>
+  </data>
+  <data name="Sparse_AddSelected" xml:space="preserve">
+    <value>➕ Add Selected Directory</value>
+  </data>
+  <data name="Sparse_CurrentDirs" xml:space="preserve">
+    <value>Current Sparse-Checkout Directories</value>
+  </data>
+  <data name="Sparse_Progress" xml:space="preserve">
+    <value>Progress</value>
+  </data>
+  <data name="Sparse_Done" xml:space="preserve">
+    <value>✅ Done: </value>
+  </data>
+  <data name="Sparse_Failed" xml:space="preserve">
+    <value>❌ Failed: </value>
+  </data>
+  <data name="Sparse_Total" xml:space="preserve">
+    <value>📊 Total: </value>
+  </data>
+  <data name="Sparse_Pause" xml:space="preserve">
+    <value>⏸ Pause</value>
+  </data>
+  <data name="Sparse_RetryFailed" xml:space="preserve">
+    <value>🔄 Retry Failed</value>
+  </data>
+  <data name="Sparse_Refresh" xml:space="preserve">
+    <value>🔃 Refresh</value>
+  </data>
+  <data name="Sparse_PreviousTasks" xml:space="preserve">
+    <value>Previous Tasks (Resume)</value>
+  </data>
+  <data name="Sparse_Log" xml:space="preserve">
+    <value>Log</value>
+  </data>
+
+  <!-- SettingsView -->
+  <data name="Settings_Title" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Settings_ToolPaths" xml:space="preserve">
+    <value>Tool Paths</value>
+  </data>
+  <data name="Settings_GitExe" xml:space="preserve">
+    <value>Git executable:</value>
+  </data>
+  <data name="Settings_ScalarExe" xml:space="preserve">
+    <value>Scalar executable:</value>
+  </data>
+  <data name="Settings_NetworkConfig" xml:space="preserve">
+    <value>Git Network Configuration (applied globally)</value>
+  </data>
+  <data name="Settings_HttpPostBuffer" xml:space="preserve">
+    <value>http.postBuffer:</value>
+  </data>
+  <data name="Settings_HttpPostBufferHint" xml:space="preserve">
+    <value>  (bytes, default 500MB)</value>
+  </data>
+  <data name="Settings_HttpLowSpeedLimit" xml:space="preserve">
+    <value>http.lowSpeedLimit:</value>
+  </data>
+  <data name="Settings_HttpLowSpeedLimitHint" xml:space="preserve">
+    <value>  (bytes/sec, below this = too slow)</value>
+  </data>
+  <data name="Settings_HttpLowSpeedTime" xml:space="preserve">
+    <value>http.lowSpeedTime:</value>
+  </data>
+  <data name="Settings_HttpLowSpeedTimeHint" xml:space="preserve">
+    <value>  (seconds at low speed before abort)</value>
+  </data>
+  <data name="Settings_CoreCompression" xml:space="preserve">
+    <value>core.compression:</value>
+  </data>
+  <data name="Settings_CoreCompressionHint" xml:space="preserve">
+    <value>  (0 = no compression, less CPU)</value>
+  </data>
+  <data name="Settings_FetchNegotiation" xml:space="preserve">
+    <value>fetch.negotiationAlgorithm:</value>
+  </data>
+  <data name="Settings_FetchNegotiationHint" xml:space="preserve">
+    <value>  ('skipping' is faster for large repos)</value>
+  </data>
+  <data name="Settings_PackThreads" xml:space="preserve">
+    <value>pack.threads:</value>
+  </data>
+  <data name="Settings_PackThreadsHint" xml:space="preserve">
+    <value>  (1 = less memory usage)</value>
+  </data>
+  <data name="Settings_RetryStrategy" xml:space="preserve">
+    <value>Retry Strategy</value>
+  </data>
+  <data name="Settings_MaxRetries" xml:space="preserve">
+    <value>Max retries per directory:</value>
+  </data>
+  <data name="Settings_BaseRetryDelay" xml:space="preserve">
+    <value>Base retry delay (sec):</value>
+  </data>
+  <data name="Settings_BaseRetryDelayHint" xml:space="preserve">
+    <value>  (doubles with each retry)</value>
+  </data>
+  <data name="Settings_MaxRetryDelay" xml:space="preserve">
+    <value>Max retry delay (sec):</value>
+  </data>
+  <data name="Settings_Save" xml:space="preserve">
+    <value>💾 Save Settings</value>
+  </data>
+  <data name="Settings_ApplyGitConfig" xml:space="preserve">
+    <value>⚙ Apply Git Config</value>
+  </data>
+  <data name="Settings_ResetDefaults" xml:space="preserve">
+    <value>↩ Reset Defaults</value>
+  </data>
+
+  <!-- MainWindow dialog -->
+  <data name="Dialog_SelectRepoDir" xml:space="preserve">
+    <value>Select existing repo working directory (the 'src' folder)</value>
+  </data>
+</root>

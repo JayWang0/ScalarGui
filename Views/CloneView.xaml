@@ -1,0 +1,130 @@
+<UserControl x:Class="ScalarGui.Views.CloneView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:ScalarGui.ViewModels"
+             xmlns:conv="clr-namespace:ScalarGui.Converters"
+             xmlns:loc="clr-namespace:ScalarGui.Localization"
+             d:DataContext="{d:DesignInstance Type=vm:CloneViewModel}"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <conv:BoolToVisibilityConverter x:Key="BoolToVis"/>
+        <conv:InverseBoolConverter x:Key="InverseBool"/>
+    </UserControl.Resources>
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Grid.Row="0" Text="{loc:Str Clone_Title}" FontSize="20" FontWeight="SemiBold" Margin="0,0,0,12"/>
+
+        <!-- Repo URL -->
+        <GroupBox Grid.Row="1" Header="{loc:Str Clone_RepoUrl}" Margin="0,0,0,8">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Text="{Binding RepoUrl, UpdateSourceTrigger=PropertyChanged}"
+                         IsEnabled="{Binding IsCloning, Converter={StaticResource InverseBool}}"
+                         VerticalContentAlignment="Center" Padding="4"/>
+                <Button Grid.Column="1" Content="{loc:Str Clone_Paste}" Command="{Binding PasteUrlCommand}"
+                        Margin="4,0,0,0" Padding="8,4"/>
+            </Grid>
+        </GroupBox>
+
+        <!-- Target Directory -->
+        <GroupBox Grid.Row="2" Header="{loc:Str Clone_TargetDir}" Margin="0,0,0,8">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0" Text="{Binding TargetDirectory, UpdateSourceTrigger=PropertyChanged}"
+                         IsEnabled="{Binding IsCloning, Converter={StaticResource InverseBool}}"
+                         VerticalContentAlignment="Center" Padding="4"/>
+                <Button Grid.Column="1" Content="{loc:Str Clone_Browse}" Command="{Binding BrowseTargetDirectoryCommand}"
+                        Margin="4,0,0,0" Padding="8,4"/>
+            </Grid>
+        </GroupBox>
+
+        <!-- Existing Repo Warning -->
+        <Border Grid.Row="3"
+                Margin="0,0,0,8"
+                Padding="12,10"
+                Background="#FFF8E1"
+                BorderBrush="#E6A700"
+                BorderThickness="1"
+                CornerRadius="6"
+                Visibility="{Binding IsAlreadyCloned, Converter={StaticResource BoolToVis}}">
+            <DockPanel LastChildFill="False">
+                <TextBlock DockPanel.Dock="Left"
+                           VerticalAlignment="Center"
+                           FontWeight="SemiBold"
+                           Text="{loc:Str Clone_AlreadyExists}"/>
+                <Button DockPanel.Dock="Right"
+                        Margin="12,0,0,0"
+                        Padding="10,4"
+                        Command="{Binding OpenExistingCloneCommand}"
+                        Content="{loc:Str Clone_OpenExisting}"/>
+            </DockPanel>
+        </Border>
+
+        <!-- Options -->
+        <GroupBox Grid.Row="4" Header="{loc:Str Clone_Options}" Margin="0,0,0,8" IsEnabled="{Binding IsCloning, Converter={StaticResource InverseBool}}">
+            <WrapPanel Margin="4">
+                <StackPanel Orientation="Horizontal" Margin="0,0,16,4">
+                    <TextBlock Text="{loc:Str Clone_Branch}" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                    <TextBox Text="{Binding Branch}" Width="150" VerticalContentAlignment="Center" Padding="4"/>
+                </StackPanel>
+                <CheckBox Content="{loc:Str Clone_SingleBranch}" IsChecked="{Binding SingleBranch}" Margin="0,0,16,4" VerticalAlignment="Center"/>
+                <CheckBox Content="{loc:Str Clone_NoTags}" IsChecked="{Binding NoTags}" Margin="0,0,16,4" VerticalAlignment="Center"/>
+                <CheckBox Content="{loc:Str Clone_FullClone}" IsChecked="{Binding FullClone}" Margin="0,0,16,4" VerticalAlignment="Center"/>
+                <CheckBox Content="{loc:Str Clone_NoSrc}" IsChecked="{Binding NoSrc}" Margin="0,0,16,4" VerticalAlignment="Center"/>
+                <CheckBox Content="{loc:Str Clone_GvfsProtocol}" IsChecked="{Binding UseGvfsProtocol}" Margin="0,0,16,4" VerticalAlignment="Center"/>
+            </WrapPanel>
+        </GroupBox>
+
+        <!-- Actions & Progress -->
+        <Grid Grid.Row="5" Margin="0,0,0,8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="{loc:Str Clone_Start}" Command="{Binding StartCloneCommand}"
+                    Padding="16,6" FontSize="14" FontWeight="SemiBold"
+                    Background="#0078D4" Foreground="White"/>
+            <Button Grid.Column="1" Content="{loc:Str Clone_Cancel}" Command="{Binding CancelCloneCommand}"
+                    Visibility="{Binding IsCloning, Converter={StaticResource BoolToVis}}"
+                    Margin="8,0,0,0" Padding="16,6"/>
+            <ProgressBar Grid.Column="2" Value="{Binding Progress}" Minimum="0" Maximum="100"
+                         Margin="8,0,0,0" Height="20"
+                         IsIndeterminate="{Binding IsCloning}"/>
+            <TextBlock Grid.Column="3" Text="{Binding StatusText}" VerticalAlignment="Center" Margin="8,0,0,0"/>
+        </Grid>
+
+        <!-- Log Output -->
+        <GroupBox Grid.Row="6" Header="{loc:Str Clone_Output}">
+            <ListBox ItemsSource="{Binding LogLines}" FontFamily="Consolas" FontSize="12"
+                     ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                     BorderThickness="0">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Padding" Value="2,1"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+        </GroupBox>
+    </Grid>
+</UserControl>

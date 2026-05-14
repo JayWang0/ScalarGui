@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- MainWindow -->
+  <data name="AppTitle" xml:space="preserve">
+    <value>ScalarGui — 大型仓库管理器</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>ScalarGui</value>
+  </data>
+  <data name="Nav_Setup" xml:space="preserve">
+    <value>🔧 环境检测</value>
+  </data>
+  <data name="Nav_Clone" xml:space="preserve">
+    <value>📥 克隆</value>
+  </data>
+  <data name="Nav_SparseCheckout" xml:space="preserve">
+    <value>📂 稀疏检出</value>
+  </data>
+  <data name="Nav_Settings" xml:space="preserve">
+    <value>⚙ 设置</value>
+  </data>
+  <data name="OpenExistingRepo" xml:space="preserve">
+    <value>📁 打开已有仓库</value>
+  </data>
+
+  <!-- SetupView -->
+  <data name="Setup_Title" xml:space="preserve">
+    <value>环境检测</value>
+  </data>
+  <data name="Setup_Subtitle" xml:space="preserve">
+    <value>请确认 Git 和 Scalar 已安装后再继续。</value>
+  </data>
+  <data name="Setup_RequiredTools" xml:space="preserve">
+    <value>必需工具</value>
+  </data>
+  <data name="Setup_Git" xml:space="preserve">
+    <value>Git</value>
+  </data>
+  <data name="Setup_GitDesc" xml:space="preserve">
+    <value>用于仓库操作和版本控制命令。</value>
+  </data>
+  <data name="Setup_Scalar" xml:space="preserve">
+    <value>Scalar</value>
+  </data>
+  <data name="Setup_ScalarDesc" xml:space="preserve">
+    <value>用于 Scalar 特有的注册和维护工作流。</value>
+  </data>
+  <data name="Setup_Download" xml:space="preserve">
+    <value>下载</value>
+  </data>
+  <data name="Setup_Recheck" xml:space="preserve">
+    <value>🔄 重新检测</value>
+  </data>
+
+  <!-- CloneView -->
+  <data name="Clone_Title" xml:space="preserve">
+    <value>Scalar 克隆</value>
+  </data>
+  <data name="Clone_RepoUrl" xml:space="preserve">
+    <value>仓库地址</value>
+  </data>
+  <data name="Clone_Paste" xml:space="preserve">
+    <value>📋 粘贴</value>
+  </data>
+  <data name="Clone_TargetDir" xml:space="preserve">
+    <value>目标目录</value>
+  </data>
+  <data name="Clone_Browse" xml:space="preserve">
+    <value>📁 浏览</value>
+  </data>
+  <data name="Clone_AlreadyExists" xml:space="preserve">
+    <value>⚠️ 该位置已存在一个仓库。</value>
+  </data>
+  <data name="Clone_OpenExisting" xml:space="preserve">
+    <value>打开已有仓库 →</value>
+  </data>
+  <data name="Clone_Options" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="Clone_Branch" xml:space="preserve">
+    <value>分支：</value>
+  </data>
+  <data name="Clone_SingleBranch" xml:space="preserve">
+    <value>单分支</value>
+  </data>
+  <data name="Clone_NoTags" xml:space="preserve">
+    <value>不拉取标签</value>
+  </data>
+  <data name="Clone_FullClone" xml:space="preserve">
+    <value>完整克隆</value>
+  </data>
+  <data name="Clone_NoSrc" xml:space="preserve">
+    <value>不创建 src/</value>
+  </data>
+  <data name="Clone_GvfsProtocol" xml:space="preserve">
+    <value>GVFS 协议</value>
+  </data>
+  <data name="Clone_Start" xml:space="preserve">
+    <value>▶ 开始克隆</value>
+  </data>
+  <data name="Clone_Cancel" xml:space="preserve">
+    <value>⏹ 取消</value>
+  </data>
+  <data name="Clone_Output" xml:space="preserve">
+    <value>输出</value>
+  </data>
+
+  <!-- SparseCheckoutView -->
+  <data name="Sparse_Title" xml:space="preserve">
+    <value>稀疏检出管理器</value>
+  </data>
+  <data name="Sparse_RepoDirs" xml:space="preserve">
+    <value>仓库目录</value>
+  </data>
+  <data name="Sparse_Loading" xml:space="preserve">
+    <value>(加载中...)</value>
+  </data>
+  <data name="Sparse_AddSelected" xml:space="preserve">
+    <value>➕ 添加选中目录</value>
+  </data>
+  <data name="Sparse_CurrentDirs" xml:space="preserve">
+    <value>当前稀疏检出目录</value>
+  </data>
+  <data name="Sparse_Progress" xml:space="preserve">
+    <value>进度</value>
+  </data>
+  <data name="Sparse_Done" xml:space="preserve">
+    <value>✅ 完成：</value>
+  </data>
+  <data name="Sparse_Failed" xml:space="preserve">
+    <value>❌ 失败：</value>
+  </data>
+  <data name="Sparse_Total" xml:space="preserve">
+    <value>📊 总计：</value>
+  </data>
+  <data name="Sparse_Pause" xml:space="preserve">
+    <value>⏸ 暂停</value>
+  </data>
+  <data name="Sparse_RetryFailed" xml:space="preserve">
+    <value>🔄 重试失败项</value>
+  </data>
+  <data name="Sparse_Refresh" xml:space="preserve">
+    <value>🔃 刷新</value>
+  </data>
+  <data name="Sparse_PreviousTasks" xml:space="preserve">
+    <value>历史任务（可恢复）</value>
+  </data>
+  <data name="Sparse_Log" xml:space="preserve">
+    <value>日志</value>
+  </data>
+
+  <!-- SettingsView -->
+  <data name="Settings_Title" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="Settings_Language" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="Settings_ToolPaths" xml:space="preserve">
+    <value>工具路径</value>
+  </data>
+  <data name="Settings_GitExe" xml:space="preserve">
+    <value>Git 可执行文件：</value>
+  </data>
+  <data name="Settings_ScalarExe" xml:space="preserve">
+    <value>Scalar 可执行文件：</value>
+  </data>
+  <data name="Settings_NetworkConfig" xml:space="preserve">
+    <value>Git 网络配置（全局应用）</value>
+  </data>
+  <data name="Settings_HttpPostBuffer" xml:space="preserve">
+    <value>http.postBuffer：</value>
+  </data>
+  <data name="Settings_HttpPostBufferHint" xml:space="preserve">
+    <value>  （字节，默认 500MB）</value>
+  </data>
+  <data name="Settings_HttpLowSpeedLimit" xml:space="preserve">
+    <value>http.lowSpeedLimit：</value>
+  </data>
+  <data name="Settings_HttpLowSpeedLimitHint" xml:space="preserve">
+    <value>  （字节/秒，低于此值视为过慢）</value>
+  </data>
+  <data name="Settings_HttpLowSpeedTime" xml:space="preserve">
+    <value>http.lowSpeedTime：</value>
+  </data>
+  <data name="Settings_HttpLowSpeedTimeHint" xml:space="preserve">
+    <value>  （低速持续多少秒后中止）</value>
+  </data>
+  <data name="Settings_CoreCompression" xml:space="preserve">
+    <value>core.compression：</value>
+  </data>
+  <data name="Settings_CoreCompressionHint" xml:space="preserve">
+    <value>  （0 = 不压缩，节省 CPU）</value>
+  </data>
+  <data name="Settings_FetchNegotiation" xml:space="preserve">
+    <value>fetch.negotiationAlgorithm：</value>
+  </data>
+  <data name="Settings_FetchNegotiationHint" xml:space="preserve">
+    <value>  （'skipping' 对大仓库更快）</value>
+  </data>
+  <data name="Settings_PackThreads" xml:space="preserve">
+    <value>pack.threads：</value>
+  </data>
+  <data name="Settings_PackThreadsHint" xml:space="preserve">
+    <value>  （1 = 更少内存占用）</value>
+  </data>
+  <data name="Settings_RetryStrategy" xml:space="preserve">
+    <value>重试策略</value>
+  </data>
+  <data name="Settings_MaxRetries" xml:space="preserve">
+    <value>每目录最大重试次数：</value>
+  </data>
+  <data name="Settings_BaseRetryDelay" xml:space="preserve">
+    <value>基础重试延迟（秒）：</value>
+  </data>
+  <data name="Settings_BaseRetryDelayHint" xml:space="preserve">
+    <value>  （每次重试翻倍）</value>
+  </data>
+  <data name="Settings_MaxRetryDelay" xml:space="preserve">
+    <value>最大重试延迟（秒）：</value>
+  </data>
+  <data name="Settings_Save" xml:space="preserve">
+    <value>💾 保存设置</value>
+  </data>
+  <data name="Settings_ApplyGitConfig" xml:space="preserve">
+    <value>⚙ 应用 Git 配置</value>
+  </data>
+  <data name="Settings_ResetDefaults" xml:space="preserve">
+    <value>↩ 恢复默认值</value>
+  </data>
+
+  <!-- MainWindow dialog -->
+  <data name="Dialog_SelectRepoDir" xml:space="preserve">
+    <value>选择已有仓库的工作目录（'src' 文件夹）</value>
+  </data>
+</root>
