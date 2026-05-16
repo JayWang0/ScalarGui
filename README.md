@@ -112,6 +112,16 @@ ScalarGui/
 3. **Sparse-Checkout** — Browse the repo tree and select only the folders you need
 4. **Work** — Open the repo in your editor with only the files you selected
 
-## License
+## Screenshots
 
+### Clone repository
+
+![Clone repository](<Screenshots/clone repo.png>)
+
+### Choose sparse-checkout folders
+
+![Choose sparse-checkout folders](<Screenshots/checkout folders.png>)
+
+## License
+ 
 ScalarGui is licensed under the [MIT License](LICENSE).
